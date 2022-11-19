@@ -1,6 +1,15 @@
-# Nuxt 3 Minimal Starter
+# 晚会抽奖系统
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+使用 [Nuxt 3](https://nuxt.com/) 搭建。样式使用 [Tailwind CSS](https://tailwindcss.com/) ，动画使用 [GSAP](https://greensock.com/) 。
+
+- [x] 抽奖逻辑
+- [x] 抽奖动画
+  - [x] 数字变动
+  - [x] Confetti? 🎉
+  - More...?
+- [ ] **TODO** 对接数据库
+
+![Screenshot](screenshot.png)
 
 ## Setup
 
