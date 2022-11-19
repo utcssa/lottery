@@ -9,7 +9,7 @@
         class="my-8"
         :target="dispNum"
         @animation-start="loading = true"
-        @animation-end="loading = false"
+        @animation-end="onAnimationEnd()"
       />
       <div class="flex justify-center my-8">
         <button
@@ -32,10 +32,28 @@
 </template>
 
 <script setup lang="ts">
+const { $confetti } = useNuxtApp().vueApp.config.globalProperties
+console.log(useNuxtApp().vueApp)
 const dispNum = ref<number>(0)
 const loading = ref<boolean>(false)
 
 const draw = () => {
   dispNum.value = Math.floor(Math.random() * 300)
+}
+
+const onAnimationEnd = () => {
+  loading.value = false
+  $confetti.start({
+    particlesPerFrame: 2,
+    defaultDropRate: 15,
+    particles: [
+      { type: 'circle' },
+      { type: 'heart' },
+      { type: 'rect' },
+    ]
+  })
+  setTimeout(() => {
+    $confetti.stop()
+  }, 2000)
 }
 </script>

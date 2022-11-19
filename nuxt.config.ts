@@ -2,5 +2,8 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss'
-  ]
+  ],
+  plugins: [
+    '~/plugins/vue-confetti.client.ts'
+  ],
 })
